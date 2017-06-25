@@ -1,6 +1,6 @@
 <?php
 //ref: http://www.phpernote.com/php-function/336.html
-$url = "\"".$_GET['url']."\"";
+$url = "".$_GET['url']."";
 $dir = $_GET['dir'];
 $filename = $_GET['filename'];
 
@@ -15,10 +15,10 @@ function getImage($url,$save_dir='',$filename='',$type=0){
 	//001
 	//if filename exists ,remove that
 	if (file_exists($filename)) {
-		echo "The file $filename exists";
+		echo "The file $filename exists<br>";
 		unlink($filename);
 	} else {
-		echo "The file $filename does not exist";
+		echo "The file $filename does not exist<br>";
 	}
 	//001END
     if(trim($url)==''){
@@ -66,5 +66,5 @@ function getImage($url,$save_dir='',$filename='',$type=0){
 }
 
 //getImage($url,$dir,$filename);
-getImage("http://pbs.twimg.com/media/DDFtkjrWAAA3He9.jpg",$dir,$filename);
+print_r(getImage($url,$dir,$filename));
 ?>
