@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors','1');
+error_reporting('E_ALL');
 //ref: http://www.phpernote.com/php-function/336.html
 $url = "".$_GET['url']."";
 $dir = $_GET['dir'];
@@ -11,7 +13,7 @@ $filename = $_GET['filename'];
 *参数：文件url,保存文件目录,保存文件名称，使用的下载方式
 *当保存文件名称为空时则使用远程文件原来的名称
 */
-function getImage($url,$save_dir='',$filename='',$type=0){
+function getImage($url,$save_dir='',$filename='',$type=3){
 	//001
 	//if filename exists ,remove that
 	if (file_exists($filename)) {
